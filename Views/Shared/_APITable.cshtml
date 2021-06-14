@@ -1,0 +1,29 @@
+﻿@model IEnumerable<ACFTechTest2.Models.testAPI>
+
+<table class="table table-striped border" id="tblTestAPI">
+    <thead>
+        <tr>
+            <th>
+                Title
+            </th>
+            <th>
+                Thumbnail
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    Title: @Html.DisplayFor(modelItem => item.title)
+                </td>
+                <td>
+                    <a href="@item.url">
+                        <img src="@item.thumbnailUrl" />
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
